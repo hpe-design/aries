@@ -37,6 +37,9 @@ const Forms = () => {
         </Subsection>
       </ContentSection>
       <ContentSection>
+      <Subsection name="Sign Up">
+            <SignUpExample />
+        </Subsection>
         <Subsection name="Sign Up">
           <Example
             code="https://raw.githubusercontent.com/hpe-design/design-system/master/aries-site/src/examples/templates/forms/SignUpExample.js"

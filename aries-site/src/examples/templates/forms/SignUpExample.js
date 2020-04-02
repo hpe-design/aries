@@ -9,6 +9,7 @@ import {
   Header,
   Heading,
   MaskedInput,
+  Grommet,
   Text,
   TextInput,
 } from 'grommet';
@@ -67,6 +68,7 @@ export const SignUpExample = () => {
               label="Full Name"
               htmlFor="fullName-sign-up"
               name="fullName"
+              required
             >
               <TextInput
                 id="fullName-sign-up"
