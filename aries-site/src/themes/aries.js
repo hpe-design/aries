@@ -6,7 +6,7 @@ export const aries = deepMerge(hpe, {
   formField: {
     border: {
       error: {
-        color: 'text',
+        color: 'text-weak',
       },
     },
     error: {
