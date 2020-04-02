@@ -9,7 +9,6 @@ import {
   Header,
   Heading,
   MaskedInput,
-  Grommet,
   Text,
   TextInput,
 } from 'grommet';
