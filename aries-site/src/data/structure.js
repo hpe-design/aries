@@ -67,7 +67,16 @@ export const structure = [
     icon: (size, color) => <IconDiamond size={size} color={color} />,
     seoDescription:
       'HPE Design System starter templates for jumpstarting application screen design and development.',
-    pages: ['Cards', 'Dashboards', 'Forms', 'Lists'],
+    pages: [
+      'Cards',
+      'Dashboards',
+      'Forms',
+      'HPE Global Navigation',
+      'Hub and Spoke Navigation',
+      'Lists',
+      'Navigation',
+      'Persistent Navigation',
+    ],
   },
   {
     name: 'Components',
@@ -115,6 +124,7 @@ export const structure = [
       'HPE Docs',
       'HPE Audience',
       'HPE Images',
+      'React Router',
     ],
   },
   {
@@ -704,6 +714,50 @@ export const structure = [
     },
     seoDescription:
       'What and how we layout content is crucial to clear communication and ease-of-use.',
+    sections: [],
+  },
+  {
+    name: 'Navigation',
+    description: 'The entry point for the expansive topic of Navigation.',
+    seoDescription:
+      'Navigation pattern guidance and recommendations for a variety of UI use cases.',
+    sections: [],
+    relatedContent: [
+      'Header',
+      'Global Sidebar',
+      'Hub and Spoke Navigation',
+      'Persistent Navigation',
+      'React Router',
+    ],
+  },
+  {
+    name: 'Hub and Spoke Navigation',
+    description: `A navigation pattern promoting focussed execution through a central "hub" from which all
+    activities begin and "spokes" on which more focused tasks are accomplished.`,
+    seoDescription:
+      'Hub and spoke navigation pattern. What, why, and when to use the Hub & Spoke pattern for navigation.',
+    relatedContent: ['Navigation', 'Persistent Navigation', 'Global Sidebar'],
+    sections: [],
+  },
+  {
+    name: 'Persistent Navigation',
+    description: `Navigation choices persist throughout the application
+    structure, presenting consistent, easy to click-through choices.`,
+    seoDescription:
+      'Persistent navigation pattern. What, why, and when to use persistent navigation.',
+    relatedContent: [
+      'Navigation',
+      'Hub and Spoke Navigation',
+      'Global Sidebar',
+    ],
+    sections: [],
+  },
+  {
+    name: 'React Router',
+    description:
+      'A collection of navigational components that compose declaratively with your application.',
+    seoDescription:
+      'A collection of navigational components that compose declaratively with your application.',
     sections: [],
   },
 ];
