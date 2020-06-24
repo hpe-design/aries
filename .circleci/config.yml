@@ -55,7 +55,7 @@ jobs:
     executor: node
     working_directory: ~/project/<< parameters.package_name >>
     docker:
-      - image: circleci/node:10.14-browsers
+      - image: circleci/node:latest-browsers-legacy
     steps:
       - checkout:
           path: ~/project/<< parameters.package_name >>
