@@ -71,8 +71,8 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
+      - run: cd aries-site && yarn build
       - run: cd aries-site && yarn test:circleci
-
       - store_test_results:
           path: /tmp/test-results
     # steps:
