@@ -12,14 +12,6 @@ executors:
       - image: circleci/node
 
 jobs:
-  trigger-workflows:
-    executor: node
-    steps:
-      - checkout
-      - run:
-          name: Trigger workflows
-          command: chmod +x .circleci/circle_trigger.sh && .circleci/circle_trigger.sh
-
   build:
     parameters:
       package_name:
@@ -44,13 +36,3 @@ jobs:
           root: ~/repo
           paths:
             - << parameters.package_name >>
-
-workflows:
-  version: 2
-
-  # The main workflow responsible for triggering all other workflows
-  # in which changes are detected.
-  ci:
-    when: << pipeline.parameters.trigger >>
-    jobs:
-      - trigger-workflows
