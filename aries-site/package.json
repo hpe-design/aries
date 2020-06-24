@@ -24,6 +24,7 @@
     "start-server": "yarn build && yarn next start -p 3030",
     "test": "yarn build && node src/scripts/start-tests.js",
     "test:local": "start-server-and-test start-server 3030 'testcafe all src/tests/'",
+    "test:circleci": "testcafe chrome:headless tests/**/* -r xunit:/tmp/test-results/res.xml",
     "lint": "eslint src",
     "lint-fix": "eslint src --fix"
   },
@@ -38,6 +39,7 @@
     "start-server-and-test": "^1.10.8",
     "testcafe": "^1.8.1",
     "testcafe-browser-provider-browserstack": "^1.11.0",
-    "testcafe-react-selectors": "^4.0.0"
+    "testcafe-react-selectors": "^4.0.0",
+    "testcafe-reporter-xunit": "^2.1.0"
   }
 }
