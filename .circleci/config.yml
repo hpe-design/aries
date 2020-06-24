@@ -1,26 +1,56 @@
-version: 2
-jobs:
-  build:
+version: 2.1
+
+parameters:
+  # This parameter is used to trigger the main workflow
+  trigger:
+    type: boolean
+    default: true
+
+executors:
+  node:
     docker:
-      - image: circleci/node:10.14-browsers
+      - image: circleci/node
 
-    working_directory: ~/repo/aries-site
-
+jobs:
+  trigger-workflows:
+    executor: node
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            - v1-dependencies-
+      - run:
+          name: Trigger workflows
+          command: chmod +x .circleci/circle_trigger.sh && .circleci/circle_trigger.sh
 
-      - run: yarn upgrade
+  build:
+    parameters:
+      package_name:
+        type: string
 
-      - save_cache:
+    executor: node
+    working_directory: ~/repo/<< parameters.package_name >>
+
+    steps:
+      - checkout:
+          path: ~/repo
+      # This step is added only to show that we are in the package directory
+      - run:
+          name: Content
+          command: |
+            cat README.md 
+            echo "<< parameters.package_name >> built." > build.txt
+      - run:
+          name: Build
+          command: echo "Build << parameters.package_name >> ..."
+      - persist_to_workspace:
+          root: ~/repo
           paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
+            - << parameters.package_name >>
 
-      - run: yarn test:circleci
+workflows:
+  version: 2
 
-      - store_test_results:
-          path: /tmp/test-results
+  # The main workflow responsible for triggering all other workflows
+  # in which changes are detected.
+  ci:
+    when: << pipeline.parameters.trigger >>
+    jobs:
+      - trigger-workflows
