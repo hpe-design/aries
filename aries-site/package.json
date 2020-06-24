@@ -24,7 +24,7 @@
     "start-server": "yarn build && yarn next start -p 3030",
     "test": "yarn build && node src/scripts/start-tests.js",
     "test:local": "start-server-and-test start-server 3030 'testcafe all src/tests/'",
-    "test:circleci": "testcafe chrome:headless tests/**/* -r xunit:/tmp/test-results/results.xml",
+    "test:circleci": "testcafe chrome:headless src/tests/**/* -r xunit:/tmp/test-results/results.xml",
     "lint": "eslint src",
     "lint-fix": "eslint src --fix"
   },
