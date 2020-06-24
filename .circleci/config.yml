@@ -80,10 +80,25 @@ workflows:
     when: << pipeline.parameters.aries-site >>
     jobs:
       - build:
-          name: api-build
+          name: Build and run end-to-end tests
           package_name: aries-site
-      # - deploy:
-      #     name: api-deploy
-      #     package_name: api
-      #     requires:
-      #       - api-build
+          docker:
+            - image: circleci/node:10.14-browsers
+          steps:
+            - checkout
+            - restore_cache:
+                keys:
+                  - v1-dependencies-{{ checksum "package.json" }}
+                  - v1-dependencies-
+
+            - run: yarn upgrade
+
+            - save_cache:
+                paths:
+                  - node_modules
+                key: v1-dependencies-{{ checksum "package.json" }}
+
+            - run: yarn test
+
+            - store_test_results:
+                path: /tmp/test-results
