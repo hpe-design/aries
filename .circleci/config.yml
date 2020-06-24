@@ -57,7 +57,8 @@ jobs:
     docker:
       - image: circleci/node:10.14-browsers
     steps:
-      - checkout
+      - checkout:
+          path: ~/project/<< parameters.package_name >>
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "package.json" }}
