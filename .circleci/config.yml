@@ -6,33 +6,84 @@ parameters:
     type: boolean
     default: true
 
+  # A parameter per package
+  aries-site:
+    type: boolean
+    default: false
+
 executors:
   node:
     docker:
       - image: circleci/node
 
 jobs:
+  trigger-workflows:
+    executor: node
+    steps:
+      - checkout
+      - run:
+          name: Trigger workflows
+          command: chmod +x .circleci/circle_trigger.sh && .circleci/circle_trigger.sh
+
   build:
     parameters:
       package_name:
         type: string
 
     executor: node
-    working_directory: ~/repo/<< parameters.package_name >>
+    working_directory: ~/project/<< parameters.package_name >>
 
     steps:
       - checkout:
-          path: ~/repo
+          path: ~/project
       # This step is added only to show that we are in the package directory
       - run:
           name: Content
-          command: |
-            cat README.md 
-            echo "<< parameters.package_name >> built." > build.txt
+          command: echo "<< parameters.package_name >> built." > build.txt
       - run:
           name: Build
           command: echo "Build << parameters.package_name >> ..."
       - persist_to_workspace:
-          root: ~/repo
+          root: ~/project
           paths:
             - << parameters.package_name >>
+
+  # deploy:
+  #   parameters:
+  #     package_name:
+  #       type: string
+  #   executor: node
+  #   working_directory: ~/project/<< parameters.package_name >>
+  #   steps:
+  #     - attach_workspace:
+  #         at: ~/project
+  #     # This step is added to show that files are available from the build job.
+  #     - run:
+  #         name: Content to deploy
+  #         command: ls && cat build.txt
+  #     - deploy:
+  #         name: Deploy
+  #         command: echo "Deploying << parameters.package_name >> ..."
+
+workflows:
+  version: 2
+
+  # The main workflow responsible for triggering all other workflows
+  # in which changes are detected.
+  ci:
+    when: << pipeline.parameters.trigger >>
+    jobs:
+      - trigger-workflows
+
+  # Workflows defined for each package.
+  aries-site:
+    when: << pipeline.parameters.aries-site >>
+    jobs:
+      - build:
+          name: api-build
+          package_name: aries-site
+      # - deploy:
+      #     name: api-deploy
+      #     package_name: api
+      #     requires:
+      #       - api-build
