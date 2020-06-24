@@ -48,22 +48,42 @@ jobs:
           paths:
             - << parameters.package_name >>
 
-  # deploy:
-  #   parameters:
-  #     package_name:
-  #       type: string
-  #   executor: node
-  #   working_directory: ~/project/<< parameters.package_name >>
-  #   steps:
-  #     - attach_workspace:
-  #         at: ~/project
-  #     # This step is added to show that files are available from the build job.
-  #     - run:
-  #         name: Content to deploy
-  #         command: ls && cat build.txt
-  #     - deploy:
-  #         name: Deploy
-  #         command: echo "Deploying << parameters.package_name >> ..."
+  test:
+    parameters:
+      package_name:
+        type: string
+    executor: node
+    working_directory: ~/project/<< parameters.package_name >>
+    docker:
+      - image: circleci/node:10.14-browsers
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-
+
+      - run: yarn upgrade
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      - run: yarn test:circleci
+
+      - store_test_results:
+          path: /tmp/test-results
+    # steps:
+    #   - attach_workspace:
+    #       at: ~/project
+    #   # This step is added to show that files are available from the build job.
+    #   - run:
+    #       name: Content to deploy
+    #       command: ls && cat build.txt
+    #   - deploy:
+    #       name: Deploy
+    #       command: echo "Deploying << parameters.package_name >> ..."
 
 workflows:
   version: 2
@@ -80,25 +100,8 @@ workflows:
     when: << pipeline.parameters.aries-site >>
     jobs:
       - build:
-          name: Build and run end-to-end tests
+          name: Build
           package_name: aries-site
-          docker:
-            - image: circleci/node:10.14-browsers
-          steps:
-            - checkout
-            - restore_cache:
-                keys:
-                  - v1-dependencies-{{ checksum "package.json" }}
-                  - v1-dependencies-
-
-            - run: yarn upgrade
-
-            - save_cache:
-                paths:
-                  - node_modules
-                key: v1-dependencies-{{ checksum "package.json" }}
-
-            - run: yarn test
-
-            - store_test_results:
-                path: /tmp/test-results
+      - test:
+          name: Run end-to-end tests
+          package_name: aries-site
