@@ -123,6 +123,11 @@ export const aries = deepMerge(hpe, {
         `,
     },
   },
+  icon: {
+    extend: `
+      // stroke-linecap: round;      
+    `,
+  },
 });
 
 export const { colors } = aries.global;
