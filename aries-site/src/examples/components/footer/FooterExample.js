@@ -13,9 +13,9 @@ export const FooterExample = () => {
   ];
   return (
     <Footer
-      background="background-front"
       direction={size !== 'small' ? 'row' : 'column'}
       align={size !== 'small' ? 'center' : undefined}
+      pad={{ horizontal: 'medium', vertical: 'small' }}
     >
       <Box
         direction={size !== 'small' ? 'row' : 'column'}

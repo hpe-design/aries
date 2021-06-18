@@ -2,16 +2,13 @@ import { useContext } from 'react';
 import { Box, Grid, ResponsiveContext, Text } from 'grommet';
 import { ContentPreviewCard } from '../../components';
 import {
-  HeaderOnlyExample,
-  HeaderFooterExample,
-  SidebarHeaderExample,
-  SidebarHeaderFooterExample,
-  StickyHeaderExample,
-  SidebarHeaderFooterPreview,
-  SidebarHeaderPreview,
-  HeaderFooterPreview,
-  StickyHeaderPreview,
-  HeaderOnlyPreview,
+  HubCardsExample,
+  HubListExample,
+  HubTableExample,
+  SpokeListExample,
+  SpokeTwoColumnExample,
+  SpokeThreeColumnExample,
+  PreviewImage,
 } from '../../examples';
 import { Example } from '../../layouts';
 import { nameToSlug } from '../../utils';
@@ -34,10 +31,6 @@ Choosing a page layout is an important first step in designing an application or
 - Providing a dialog for viewing or updating something
 - Displaying a page in a website
 
-**Components used within a Page Layout:**
-
-Page Layouts are built using the [Header](/components/header) and [Main](/components/main) components, with optional [Sidebar](/extend/global-sidebar) and [Footer](/components/footer) components. For guidance on page layout content, refer to the HPE Design System website pages for the components that make up your Page Layout.
-
 ### Usage
 
 Page Layouts provide the basic structure for a variety of page types.
@@ -58,110 +51,168 @@ The screen reader reads page content in the order it is specified. Refer to the 
 
 Specify page layout content so that it is understandable by the screen reader too. This should make the page easier to visually read as well.
 
-## Variants
+## Hub Variants
 
-Examples of common page layouts.
+A "hub" cleanly presents multiple discreet application sections or "spokes." Each "spoke" keeps the user centered on a more focused task.
 
-### Sidebar, header, and footer
+For page layouts specific to spokes, see [Spoke Variants](#spoke-variants). For more information about Hub and Spoke navigation, read [Hub and Spoke Guidance](/templates/hub-and-spoke-navigation).
 
-On desktop, the sidebar is fixed to the left side while header, main, and footer are a scrollable region. On mobile, the sidebar is fixed to the bottom of the screen.
-
-The border around page sections is for demonstration purposes only. Remove border in production.
+### Hub Cards
 
 <Example
-  code="https://raw.githubusercontent.com/grommet/hpe-design-system/master/aries-site/src/examples/templates/page-layouts/SidebarHeaderFooterExample.js"
+  code={[
+    "https://raw.githubusercontent.com/grommet/hpe-design-system/master/aries-site/src/examples/templates/page-layouts/HubCardsExample.js", 
+    "https://raw.githubusercontent.com/grommet/hpe-design-system/master/aries-site/src/examples/components/header/HeaderExample.js", 
+    "https://raw.githubusercontent.com/grommet/hpe-design-system/master/aries-site/src/examples/components/header/HeaderPageExample.js", 
+    "https://raw.githubusercontent.com/grommet/hpe-design-system/master/aries-site/src/examples/components/footer/FooterExample.js",
+    "https://raw.githubusercontent.com/grommet/hpe-design-system/master/aries-site/src/examples/templates/page-layouts/skeletons/HeadingSkeleton.js",
+    "https://raw.githubusercontent.com/grommet/hpe-design-system/master/aries-site/src/examples/templates/page-layouts/skeletons/ParagraphSkeleton.js",
+  ]}
   figma="https://www.figma.com/file/4rdBkUlHd5MCVq3hvUOXHd/App-Page-Layouts?node-id=90%3A6535"
-  relevantComponents={['Footer', 'Global Sidebar', 'Header', 'Main']}
   width="100%"
-  screenContainer
+  showResponsiveControls={['laptop', 'mobile']}
+  template
 >
-  <SidebarHeaderFooterExample />
+  <HubCardsExample />
 </Example>
 
-### Sidebar and header
-
-On desktop, the sidebar is fixed to the left side while header and main are a scrollable region. On mobile, the sidebar is fixed to the bottom of the screen.
-
-The border around page sections is for demonstration purposes only. Remove border in production.
+### Hub List
 
 <Example
-  code="https://raw.githubusercontent.com/grommet/hpe-design-system/master/aries-site/src/examples/templates/page-layouts/SidebarHeaderExample.js"
-  figma="https://www.figma.com/file/4rdBkUlHd5MCVq3hvUOXHd/App-Page-Layouts?node-id=90%3A6568"
-  relevantComponents={['Global Sidebar', 'Header', 'Main']}
+  code={[
+    "https://raw.githubusercontent.com/grommet/hpe-design-system/master/aries-site/src/examples/templates/page-layouts/HubListExample.js", 
+    "https://raw.githubusercontent.com/grommet/hpe-design-system/master/aries-site/src/examples/components/header/HeaderExample.js", 
+    "https://raw.githubusercontent.com/grommet/hpe-design-system/master/aries-site/src/examples/components/header/HeaderPageExample.js", 
+    "https://raw.githubusercontent.com/grommet/hpe-design-system/master/aries-site/src/examples/components/footer/FooterExample.js", 
+    "https://raw.githubusercontent.com/grommet/hpe-design-system/master/aries-site/src/examples/templates/page-layouts/skeletons/ListSkeleton.js",
+    "https://raw.githubusercontent.com/grommet/hpe-design-system/master/aries-site/src/examples/templates/page-layouts/skeletons/AvatarSkeleton.js",
+    "https://raw.githubusercontent.com/grommet/hpe-design-system/master/aries-site/src/examples/templates/page-layouts/skeletons/ParagraphSkeleton.js",
+    "https://raw.githubusercontent.com/grommet/hpe-design-system/master/aries-site/src/examples/templates/page-layouts/skeletons/TextSkeleton.js",
+  ]}
+  figma="https://www.figma.com/file/4rdBkUlHd5MCVq3hvUOXHd/App-Page-Layouts?node-id=90%3A6535"
   width="100%"
-  screenContainer
+  showResponsiveControls={['laptop', 'mobile']}
+  template
 >
-  <SidebarHeaderExample />
+  <HubListExample />
 </Example>
 
-### Header and footer
+### Hub Table
 
-On both desktop and mobile, all content scrolls.
+In this layout, the Table serves as a hub that allows the user to drill down into specific data records. Clicking on a row of the table may navigate the user to a detail page about that record, allowing the user to review additional information or perform actions specific to that record.
 
-The border around page sections is for demonstration purposes only. Remove border in production.
+When there is not enough screen width for the entire table to fit, the table should scroll horizontally while the rest of the page content remains as is. For more details on responsive table behaviors, read [Table Guidance](/components/table#guidelines).
 
 <Example
-  code="https://raw.githubusercontent.com/grommet/hpe-design-system/master/aries-site/src/examples/templates/page-layouts/HeaderFooterExample.js"
-  figma="https://www.figma.com/file/4rdBkUlHd5MCVq3hvUOXHd/App-Page-Layouts?node-id=90%3A6545"
-  relevantComponents={['Header', 'Footer', 'Main']}
+  code={[
+    "https://raw.githubusercontent.com/grommet/hpe-design-system/master/aries-site/src/examples/templates/page-layouts/HubTableExample.js", 
+    "https://raw.githubusercontent.com/grommet/hpe-design-system/master/aries-site/src/examples/components/header/HeaderExample.js", 
+    "https://raw.githubusercontent.com/grommet/hpe-design-system/master/aries-site/src/examples/components/header/HeaderPageExample.js", 
+    "https://raw.githubusercontent.com/grommet/hpe-design-system/master/aries-site/src/examples/components/footer/FooterExample.js",
+    "https://raw.githubusercontent.com/grommet/hpe-design-system/master/aries-site/src/examples/templates/page-layouts/skeletons/TableSkeleton.js"
+  ]}
+  figma="https://www.figma.com/file/4rdBkUlHd5MCVq3hvUOXHd/App-Page-Layouts?node-id=90%3A6535"
   width="100%"
-  screenContainer
+  showResponsiveControls={['laptop', 'mobile']}
+  template
 >
-  <HeaderFooterExample />
+  <HubTableExample />
 </Example>
 
-### Sticky header
+## Spoke Variants
 
-On both desktop and mobile, header is fixed to the top of the screen while main and footer are a scrollable region.
 
-The border around page sections is for demonstration purposes only. Remove border in production.
+When on a spoke, a button should be placed directly above the page heading that allows the user to navigate back up the navigation hierarchy.
+
+The button should be labeled "Back to X", where X is the title of the hub that led to this page. For example, if the user reached this spoke from a page called "Account Settings", then the button label should be "Back to Account Settings".
+
+### Spoke List
 
 <Example
-  code="https://raw.githubusercontent.com/grommet/hpe-design-system/master/aries-site/src/examples/templates/page-layouts/StickyHeaderExample.js"
-  figma="https://www.figma.com/file/4rdBkUlHd5MCVq3hvUOXHd/App-Page-Layouts?node-id=90%3A6540"
-  relevantComponents={['Header', 'Footer', 'Main']}
+  code={[
+    "https://raw.githubusercontent.com/grommet/hpe-design-system/master/aries-site/src/examples/templates/page-layouts/SpokeListExample.js", 
+    "https://raw.githubusercontent.com/grommet/hpe-design-system/master/aries-site/src/examples/components/header/HeaderExample.js", 
+    "https://raw.githubusercontent.com/grommet/hpe-design-system/master/aries-site/src/examples/components/header/HeaderPageExample.js", 
+    "https://raw.githubusercontent.com/grommet/hpe-design-system/master/aries-site/src/examples/components/footer/FooterExample.js", 
+    "https://raw.githubusercontent.com/grommet/hpe-design-system/master/aries-site/src/examples/templates/page-layouts/skeletons/ListSkeleton.js",
+    "https://raw.githubusercontent.com/grommet/hpe-design-system/master/aries-site/src/examples/templates/page-layouts/skeletons/AvatarSkeleton.js",
+    "https://raw.githubusercontent.com/grommet/hpe-design-system/master/aries-site/src/examples/templates/page-layouts/skeletons/ParagraphSkeleton.js",
+    "https://raw.githubusercontent.com/grommet/hpe-design-system/master/aries-site/src/examples/templates/page-layouts/skeletons/TextSkeleton.js",
+  ]}
+  figma="https://www.figma.com/file/4rdBkUlHd5MCVq3hvUOXHd/App-Page-Layouts?node-id=90%3A6535"
   width="100%"
-  screenContainer
+  showResponsiveControls={['laptop', 'mobile']}
+  template
 >
-  <StickyHeaderExample />
+  <SpokeListExample />
 </Example>
 
-### Header only
-
-On both desktop and mobile, all content scrolls.
-
-The border around page sections is for demonstration purposes only. Remove border in production.
+### Spoke 2 Column
 
 <Example
-  code="https://raw.githubusercontent.com/grommet/hpe-design-system/master/aries-site/src/examples/templates/page-layouts/HeaderOnlyExample.js"
-  figma="https://www.figma.com/file/4rdBkUlHd5MCVq3hvUOXHd/App-Page-Layouts?node-id=90%3A6572"
-  relevantComponents={['Header', 'Main']}
+  code={[
+    "https://raw.githubusercontent.com/grommet/hpe-design-system/master/aries-site/src/examples/templates/page-layouts/SpokeTwoColumnExample.js", 
+    "https://raw.githubusercontent.com/grommet/hpe-design-system/master/aries-site/src/examples/components/header/HeaderExample.js", 
+    "https://raw.githubusercontent.com/grommet/hpe-design-system/master/aries-site/src/examples/components/header/HeaderPageExample.js", 
+    "https://raw.githubusercontent.com/grommet/hpe-design-system/master/aries-site/src/examples/components/footer/FooterExample.js", 
+    "https://raw.githubusercontent.com/grommet/hpe-design-system/master/aries-site/src/examples/templates/page-layouts/skeletons/HeadingSkeleton.js",
+    "https://raw.githubusercontent.com/grommet/hpe-design-system/master/aries-site/src/examples/templates/page-layouts/skeletons/MeterSkeleton.js",
+    "https://raw.githubusercontent.com/grommet/hpe-design-system/master/aries-site/src/examples/templates/page-layouts/skeletons/ParagraphSkeleton.js",
+    "https://raw.githubusercontent.com/grommet/hpe-design-system/master/aries-site/src/examples/templates/page-layouts/skeletons/TextSkeleton.js",
+  ]}
+  figma="https://www.figma.com/file/4rdBkUlHd5MCVq3hvUOXHd/App-Page-Layouts?node-id=90%3A6535"
   width="100%"
-  screenContainer
+  showResponsiveControls={['laptop', 'mobile']}
+  template
 >
-  <HeaderOnlyExample />
+  <SpokeTwoColumnExample />
+</Example>
+
+### Spoke 3 Column
+
+<Example
+  code={[
+    "https://raw.githubusercontent.com/grommet/hpe-design-system/master/aries-site/src/examples/templates/page-layouts/SpokeThreeColumnExample.js", 
+    "https://raw.githubusercontent.com/grommet/hpe-design-system/master/aries-site/src/examples/components/header/HeaderExample.js", 
+    "https://raw.githubusercontent.com/grommet/hpe-design-system/master/aries-site/src/examples/components/header/HeaderPageExample.js", 
+    "https://raw.githubusercontent.com/grommet/hpe-design-system/master/aries-site/src/examples/components/footer/FooterExample.js", 
+    "https://raw.githubusercontent.com/grommet/hpe-design-system/master/aries-site/src/examples/templates/page-layouts/skeletons/HeadingSkeleton.js",
+    "https://raw.githubusercontent.com/grommet/hpe-design-system/master/aries-site/src/examples/templates/page-layouts/skeletons/MeterSkeleton.js",
+    "https://raw.githubusercontent.com/grommet/hpe-design-system/master/aries-site/src/examples/templates/page-layouts/skeletons/ParagraphSkeleton.js",
+    "https://raw.githubusercontent.com/grommet/hpe-design-system/master/aries-site/src/examples/templates/page-layouts/skeletons/TextSkeleton.js",
+  ]}
+  figma="https://www.figma.com/file/4rdBkUlHd5MCVq3hvUOXHd/App-Page-Layouts?node-id=90%3A6535"
+  width="100%"
+  showResponsiveControls={['laptop', 'mobile']}
+  template
+>
+  <SpokeThreeColumnExample />
 </Example>
 
 export const layouts = [
   {
-    name: 'Sidebar, header, and footer',
-    preview: <SidebarHeaderFooterPreview />,
+    name: 'Hub Cards',
+    preview: <PreviewImage src={{dark: "/templateImages/hub-cards-dark.png", light: "/templateImages/hub-cards-light.png"}} alt="Hub Cards Preview" />,
   },
   {
-    name: 'Sidebar and header',
-    preview: <SidebarHeaderPreview />,
+    name: 'Hub List',
+    preview: <PreviewImage src={{dark: "/templateImages/hub-list-dark.png", light: "/templateImages/hub-list-light.png"}} alt="Hub List Preview" />,
   },
   {
-    name: 'Header and footer',
-    preview: <HeaderFooterPreview />,
+    name: 'Hub Table',
+    preview: <PreviewImage src={{dark: "/templateImages/hub-table-dark.png", light: "/templateImages/hub-table-light.png"}} alt="Hub Table Preview" />,
   },
   {
-    name: 'Sticky Header',
-    preview: <StickyHeaderPreview />,
+    name: 'Spoke List',
+    preview: <PreviewImage src={{dark: "/templateImages/spoke-list-dark.png", light: "/templateImages/spoke-list-light.png"}} alt="Spoke List Preview" />,
   },
   {
-    name: 'Header only',
-    preview: <HeaderOnlyPreview />,
+    name: 'Spoke 2 Column',
+    preview: <PreviewImage src={{dark: "/templateImages/spoke-two-column-dark.png", light: "/templateImages/spoke-two-column-light.png"}} alt="Spoke 2 Column Preview" />,
+  },
+  {
+    name: 'Spoke 3 Column',
+    preview: <PreviewImage src={{dark: "/templateImages/spoke-three-column-dark.png", light: "/templateImages/spoke-three-column-light.png"}} alt="Spoke 3 Column Preview" />,
   },
 ];
 
@@ -184,7 +235,7 @@ export const LayoutPreviewGrid = () => {
           <Box height="small" width="100%" round="xsmall">
             {layout.preview}
           </Box>
-          <Text weight="bold" size="large" margin={{ top: 'small' }}>
+          <Text color="text-strong" weight="bold" size="large" margin={{ top: 'small' }}>
             {layout.name}
           </Text>
         </ContentPreviewCard>

@@ -27,7 +27,7 @@ export const HeaderExample = () => {
   }, [focused, setFocused]);
 
   return (
-    <Header fill="horizontal" pad="none" background="background-front">
+    <Header fill="horizontal" pad={{ horizontal: 'medium', vertical: 'small' }}>
       <Button>
         <Box
           direction="row"
@@ -64,7 +64,7 @@ export const HeaderExample = () => {
                 ref={inputRef}
                 icon={<SearchIcon id="search-icon-example" />}
                 dropHeight="small"
-                placeholder="Search HPE Design System"
+                placeholder="Search App Name"
                 onBlur={() => setFocused(false)}
                 plain
                 reverse
