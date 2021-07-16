@@ -1,1 +1,427 @@
-More content coming soon.
+Messaging within HPE applications should be informative, concise, and trustworthy.
+It should be delivered in active, positive, objective, conversational
+American English and written from a third-person [point of view](#point-of-view).
+Executed properly, messaging within HPE applications should leave users
+feeling and perceiving HPE and its products to be intelligent, experienced,
+inclusive, and non-threatening.
+
+## Messaging Voice, Tone, and Content
+
+Many definitions for tone and voice exist, however, reading through the
+various definitions, a common picture emerges:
+
+| Voice                         | Tone                                        |
+| ----------------------------- | ------------------------------------------- |
+| Who they hear                 | What they hear                              |
+| Personality                   | Attitude                                    |
+| How you are doing the writing | Who they hear                               |
+| Style                         | How your message comes across               |
+| What makes us uniquely us     | How we communicate to our specific audience |
+
+### Voice
+
+Voice is who the reader "hears" delivering messaging; embedded within it is the
+worldview of the author. Voice can be spoken, witty, friendly, formal, etc.
+At HPE, the desire is for HPE's voice to be perceived as intelligent, experienced,
+objective, inclusive, and non-threatening supporting HPE's worldview which
+believes in accelerating what's next, making bold moves, the power of yes we can, and
+being a force for good.
+
+A person's voice typically does not change once established. If HPE's voice is
+inconsistent, people will notice. For example, people notice the difference
+between writing academically when compared to sounding like a 5-year old. This
+kind of inconsistency can result in lack of trust.
+
+### Tone
+
+Tone has to do with what is conveyed or how it comes across. It can express seriousness, urgency, playfulness, objectivity, intimacy, condescension, etc.
+
+Unlike voice, tone can change based on the target audience, context, and subject
+matter. It is situational. For example, tone is very different when giving
+directions during an emergency compared to when ordering a pizza.
+
+Because tone is situational, it may be tweaked to appropriately fit the context
+within an HPE application. While tone may change, the message should be consistently
+delivered in [HPE's voice](#voice) supporting the perception of intelligence,
+experience, objectivity, and inclusivity.
+
+### Point of View
+
+Point of view is the perspective from which the message is written.
+First person perspective uses words like: I, me, us, we, our, etc.
+Second person uses any form of the word "you" which has the effect of
+addressing the reader. Third person directs the reader to things that are
+neither the writer or the reader.
+
+Examples:
+
+- _We noticed the server is malfunctioning._ (1st person-ish)
+- _Your server is malfunctioning._ (2nd person-ish)
+- _The server is malfunctioning._ (3rd person - no focus on the writer or the reader)
+
+## Guidelines for Constructing Good Messaging
+
+The following are some high-level guidelines for constructing good messaging:
+
+- Use HPE's voice and tone
+  - Conversational American English
+  - Correct grammar and punctuation
+  - Active tense
+  - Human and approachable, not robotic sounding
+  - Positive, "yes we can," not negative
+  - Never condescending
+- Respect the user and their time
+  - Establish context
+  - Lead with what is most important
+  - Explain using terminology consistent with the UI
+  - Point the user directly to a resolution. Do not use "_contact your
+    administrator_" or "_contact HPE_" &mdash; the administrator is likely
+    the user and the support contact could be a channel partner. Instead,
+    provide a direct means to connect the user with the party able to resolve
+    the issue.
+- Inspire trust and confidence
+  - Use informative, concise language
+  - State facts without coloring them in opinions
+  - Avoid charged words such as "_error_"
+  - Focus on the solution, avoid casting blame on the user or software
+  - Focus on what is needed to be accomplished, avoid personal pronouns
+    (e.g. I, you, he, she, it, we, they, me, him, her, us, them)
+- Ensure the voice is human and humane
+  - Read your message out loud to another person. Is this how you would say it out loud? Does the other person feel this is how two people would converse?
+
+## Capitalization
+
+The general rule is that things that are sentences should follow sentence capitalization rules. And, things that are titles/headings/labels should follow title capitalization rules.
+
+Sentences follow sentence capitalization rules:
+
+- Paragraphs of text
+- Tooltips
+- Notifications
+- Help
+
+Titles follow title capitalization rules:
+
+- Page/dialog titles
+- Section headings
+- Attribute labels
+- Table column headings
+- Legends
+- Tabs/Buttons
+
+Capitalize proper nouns. HPE brand and product names are proper nouns.
+
+Fight the urge to elevate normal nouns to proper noun status. For example, if you are in a "data sources" page and need to say something about data sources, do not capitalize it. Unless it is a true proper noun, leave it uncapitalized when following sentence capitalization rules.
+
+DO NOT USE ALL CAPS IN EITHER TITLES OR SENTENCES. It is harder to read and is equated with yelling.
+
+## Acronyms & Initialisms
+
+Acronyms and initialisms can be problematic and should be used with care.
+Because they are shortcuts communicating a concept in a visually shortened form, they
+tend to become distinct languages for a limited set of "insiders."
+However, for those who are less fluent or use the language infrequently,
+acronyms and initialisms are actually detrimental. Acronyms increase the cognitive load
+on the user, forcing them to "decode" the message before comprehension, and tend to
+be exclusionary rather than inclusive.
+If an acronym or initialism is needed, make sure to define it the first time it is used.
+Additionally, only use the acronym if it is used multiple times in the message.
+
+- Incorrect: _The UBC is meeting tomorrow._
+- Incorrect: _The UBC (University Building Council) is meeting tomorrow._
+- Incorrect: _The University Building Council (UBC) is meeting tomorrow._
+- Correct: _The University Building Council (UBC) is meeting tomorrow. If you
+  have UBC-related business, send it to the UBC administrator for addition to
+  the meeting agenda._
+
+## Branding
+
+To aid in comprehension, do not use full brand/product names in messaging. Refer to these with shortened names. For example, "_HPE GreenLake LightHouse_" is a mouthful and if needed several times in a sentence, set context and consider using a simpler "_Lighthouse_" the second, third, Nth time.
+
+### Maintainability
+
+A best practice for developers is to use parameter substitution in messaging where
+branded names occur.
+
+A product's branding is likely to evolve over time. For example, GreenLake Central
+recently rebranded as Cloud Services. Imagine the multitude of instances to which
+the product name was referred. Use of parameter substitution limits the number changes to
+be made while ensuring brand names are spelled and capitalized consistently in all
+messages. Implementing messages with a parameterized `${prodname}` instead of
+hardcoded messages allows for a product's branding to be changed easily,
+confidently, and comprehensively.
+Lastly, consider formal and informal substitution values which can be used in
+various contexts. For example:
+
+- formal = HPE Ezmeral Container Platform
+- normal = Ezmeral Container Platform
+- short = Container Platform
+
+## Language Dos and Don'ts
+
+**Do this:**
+
+- Use words like "a", "an", "the" so we don't sound like a robot.
+- Add punctuation to the end of each sentence.
+- Use correct punctuation within a sentence.
+- Feel free to use contractions.
+- Adjectives typically come before nouns.
+  - Incorrect: _the operation specified is…_
+  - Correct: _the specified operation is…_
+- Adjectives in English appear in a specific order. If this order is violated, the sentence will seem odd.
+  - From the book *The Elements of Eloquence*: ...adjectives in English absolutely have to be in this order: opinion-size-age-shape-color-origin-material-purpose Noun. So you can have a lovely little old rectangular green French silver whittling knife. But if you mess with that word order in the slightest you’ll sound like a maniac. It’s an odd thing that every English speaker uses that list, but almost none of us could write it out.
+  - There's a slightly different order listed in the Cambridge Dictionary.
+  - Therefore: _two failing SATA SSD drives_ and not _SSD SATA failing two drives_
+
+**Don't do this:**
+
+- Avoid possessives (e.g. _the server hardware's power is off_).
+- Eliminate run-on sentences.
+- Don't overuse the word "please".  While "please" is allowed, starting every action phrase with the word "please" is not appropriate.  In general, we should be limiting the use of "please".
+- When the subject of a sentence is a specific resource, do not use that resource’s name as an adjective describing a resource type.  Instead, use the type as an adjective describing the resource:
+  - Incorrect: _the ABC uplink set has…_
+  - Correct: _the uplink set "ABC" has…_
+- It is not necessary to tell the user to _retry the operation_ in most cases.  For example, if the user has entered incorrect or illegal values, we only need to tell them to specify correct values and do not also need to tell them to retry the operation.  The retry is intuitive and obvious in these cases.
+- Never tell the user to retry after _some time_.  Be more specific.
+  - E.g. "_after 3 minutes_" or "_after the refresh has completed."_
+- Don't tell the user to _try_ or _attempt_ things. It does not convey confidence. Instead, tell them to do things.
+  - Incorrect: _Try resetting the interconnect._
+  - Correct: _Reset the interconnect._
+- Don't say _bad request_. This is blaming the user.  Just explain what is wrong.
+- Do not use internal terminology in external messaging.
+- Do not refer to "the" or "your" administrator in messaging.  More often than not, the user reading the message is the administrator. Be more specific.
+- When making parenthetical comments…
+  - Don’t add spaces inside the parentheses: _this is bad ( yes it is )._
+  - Do add spaces outside the parentheses: _this is bad(yes it is)._ The exception would be things like “server(s)”.
+- Avoid incorrect use of the word "input".
+  - Incorrect: _Specify a valid certificate as input._
+  - Correct: _Specify a valid certificate._
+  - Incorrect: _One of the input parameters is null._
+  - Correct: _One of the parameters is null._ or _One of the specified parameters is null._ or _The "name" parameter is null._
+
+## Case Study
+
+Here is an example of messaging related to a condition where a Kubernetes cluster is running low on available memory and different ways of handling it.
+
+**Image goes here**
+
+Problems:
+
+- No punctuation
+- No verb
+- No context (what cluster?)
+- Robotic (robots don't use words like "a", "the", "is")
+- Incorrect capitalization of memory (it is not a proper noun)
+
+**Image goes here**
+
+Problems:
+
+- It is better to have the resource type (cluster) precede the resource name (ABC).
+- Names are user-specified and can cause readability issues if not quoted or hyperlinks. See what happens if "ABC" is replaced with names like "the", "storage", "Joe's", "obsolete", or any random string containing spaces.
+- What does "out of memory" actually mean? We should be more specific.
+
+**Image goes here**
+
+Problems:
+
+- Strongly consider hyperlinking any named resource so that a user can directly navigate to it from a notification.
+- 95% of 10TB means that 500GB are still free. But, 95% of 16GB means only 800MB remain. Showing only percentages doesn't offer the user enough context to make a decision.
+
+**Image goes here**
+
+Problems:
+
+- What is the user supposed to do about this? Never raise an issue without offering a solution.
+
+**Image goes here**
+
+Problems:
+
+- What is the needful? This is a saying not used in conversational American English and does not give the user specific guidance.
+
+**Image goes here**
+
+Problems:
+
+- The user purchased the cluster to use it. Telling them to stop using it is not going to go over well.
+- Is this really a critical issue? Unused resources are often considered wasted resources. It is actually a good thing to be fully utilizing your hardware.
+- In an aaS world, additional capacity should be a simple add-on to an existing service. As such, this may not be a critical issue, but could be transformed to a lower priority marketing message.
+
+**Image goes here**
+
+Problems:
+
+- If possible, give the user a way to directly perform a mentioned action.
+
+**Image goes here**
+
+## Miscellany
+
+### Quoting
+
+In messaging that contains user-specified content, use double-quotes around this content if it is not rendered as a hyperlink. If user-content is rendered as a hyperlink, the hyperlink styling is sufficient to offset the content from other text in the message.
+
+Why is this important? User-entered names can contain spaces, and if they are not quoted or rendered as hyperlinks, they can hinder comprehension of a message.
+
+Here is a correct example: _the uplink set "{0}" has a problem_. Compare this to an incorrect example: _the uplink set {0} has a problem_. If the uplink set is named "deleted", this will read as _the uplink set deleted has a problem_.
+
+### Referring to support
+
+- Do not tell the user to contact their administrator. The user is likely the administrator.
+- Do not tell the user to contact HPE. A 3rd party may be providing support to the customer.
+- Use something like: _Contact your authorized support representative._
+- Do not overuse this phrase. If the resolution to a problem is clear, just give the resolution and do not add that the user should contact support.
+- Contacting support costs everyone time and money, so do not turn every issue into a potential support issue. It makes our product seem unnecessarily fragile and can result in unnecessary support calls.
+- Do use this phrase for internal errors where there's nothing else the user can do (i.e. when it is the only resolution).
+
+### Localization
+
+A best practice for developers is to add comments to messages in the properties files or message catalogs. Reviewers and translators (and ultimately, customers) will thank you.
+
+- Document all parameter substitution values. When the value is a resource, be specific. Is it a name? Is it a URI? Is it raw JSON that needs to be encapsulated in curly braces? Or is it pre-formatted JSON that includes curly braces?
+- For errors and alerts, document the severity associated with the message.
+- Document the type of message (alert, task, etc).
+- If the message doesn't document (for the user) full details of how this problem occurs or what to do about it, add the details in comments.
+- Some context around the task being performed or the resource category involved is useful.
+- Is the message an API-only message (does not appear in the UI)? If yes, document it as such.
+
+View additional [localization and internationalization](/templates/internationalization) resources.
+
+### Scale
+
+Consider singular and plural use cases and craft messages for each.
+
+If a sentence contains a list, do not allow the length of the list to be unbounded. Instead, consider a construct where three items are shown and the remaining item are grouped: _The following policies have not been implemented: Policy A, Policy B, Policy C, and 5 others._
+
+### User Input
+
+Unless there is a compelling reason, do not limit the character set that a user can use to name things. Names commonly contain non-alphanumeric characters and we must handle them correctly on input and in re-display via messaging. For example:
+
+- _Joe’s system_ (apostrophe for a possessive)
+- _O’Reilly Auto Parts_ (apostrophe in name)
+- _Yahoo! Client_ (company name includes a symbol)
+- _Frank James-Martin_ (Hyphen in name)
+- _DC-NY-East_ (Dashes in internal company identifiers)
+- _Björk Guðmundsdóttir_ (Unicode characters)
+- _联想_ (Unicode characters)
+- _John Q. Public_ (punctuation for abbreviation)
+- _“”>_ (An actual company name in the UK that the UK Companies House had to ban because it broke their systems. See [article](https://idle.slashdot.org/story/20/11/08/2334254/uk-agency-demands-company-stop-using-name-which-includes-an-html-closing-tag).)
+
+Proper encoding/decoding of user-entered input must be performed to prevent SQL/XSS attacks. Input such as the following user input must not cause problems when the user-generated input is later incorporated in application messaging:
+
+- _Robert’); DROP TABLE Students;--_ (see: [https://xkcd.com/327/](https://xkcd.com/327/))
+
+User-generated input can be arbitrarily long. When confronted with displaying user-generated input, plan for the 80% case, but define which of truncation (with hover) or wrapping will be used.
+
+## Other Common Problems and How To Address Them
+
+The following are commonly misspelled/mis-capitalized terms:
+
+- The following must be spelled/capitalized as shown:
+  - Kubernetes
+  - Ethernet
+  - Fibre Channel
+  - FCoE
+  - SNMP, SNMPv3
+  - ID (not id or Id)
+  - OK (not ok, Ok, or okay)
+  - I/O (not IO or i/o)
+  - API (not xApi) (either that, or be explicit and say X-API-Version)
+- "Log in" is a verb (e.g. "Log in to the server").
+- "Login" is a noun or adjective (e.g. "The login token has expired").
+- Use the word "and" instead of an ampersand "&".
+- Filesystem is one word.
+- Use "host name" when referring to the name of a host.
+- Use "hostname" when referring to the Unix command.
+
+The following table contains a set of common mistakes found in messaging, along with suggested corrections:
+
+| Don't                                                                  | Do                                                                      | Notes                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| ---------------------------------------------------------------------- | ----------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| internal error                                                         | unexpected problem                                                      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |   |
+| coding error                                                           | unexpected problem                                                      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| issue/error                                                            | problem                                                                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| Failed to                                                              | Unable to                                                               |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| X failed                                                               | Unable to X                                                             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| since                                                                  | because                                                                 | Unless referring to time                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| there's                                                                | there is                                                                |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| non something                                                          | non-something                                                           |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| can not                                                                | cannot                                                                  |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| associated to                                                          | associated with                                                         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| as the                                                                 | because the                                                             | Only when it can be substituted with "because the".  There are valid uses of "as the", e.g. X must be the same as the Y. In general, don't use "as" where you can use "because".                                                                                                                                                                                                                                                                                                               |
+| as it has                                                              | because it has                                                          | In general, do not use "as" where you can use "because"                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| make sure                                                              | ensure                                                                  |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| check if                                                               | ensure that                                                             | Note: "check if" or "verify that" are never valid resolutions because they don't tell you what to do or how to do it. A resolution must be actionable. For example: "Check if the required CA certificates have been added and are valid" is not a good resolution. It does not tell you what to do if the certs have not been added or is the certs have been added but are not valid. Our messaging must lead the user to success -- not leave them guessing.                                |
+| provide / provided, supply / supplied, give / given                    | specify / specified                                                     | Be careful with blind replacements here. In many cases, it is possible, but our "contact support" message includes the word "provide" and must not be changed to say "...specify a support dump."                                                                                                                                                                                                                                                                                              |
+| try again / retry operation (when used as the sole recommended action) | Tell the user what they need to change and then tell them to try again. | At minimum, each instance needs to be evaluated more deeply to see what our code could do to prevent the user from doing something we could do ourselves.  If a retry is due to a timeout (proxy, etc), then first see if the code can be changed to use an exponential backoff algorithm to do its own retries.  Any time that retry will be used in messaging, the message itself needs more explanation for what actually went wrong.                                                       |
+| try again / retry operation (without understanding the larger context) | Understand the context and give the correct recommendation.             | E.g. in a sub-task of _add enclosure_, a try again resolution of any kind is inappropriate because the add enclosure will always result in an enclosure resource being created. The user cannot try the enclosure add a second time.                                                                                                                                                                                                                                                           |
+| should                                                                 | must                                                                    | _Should_ does not mean _must_. If you say that a value should be 0, that is only a suggestion. If it is a requirement, use the word "must".                                                                                                                                                                                                                                                                                                                                                    |
+| has to be                                                              | must be                                                                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| were / was / had                                                       | are / is / has                                                          | Use "were"/"was"/"had" to refer to the past and "are"/"is"/"has" to refer to the present.  Notifications must typically refer to the present. Wrong: _there were no licenses_.  Right: _there are no licenses_. Acceptable: _Multiple occurrences of the same network were found…_                                                                                                                                                                                                             |
+| mark                                                                   | set / specify                                                           | Wrong: _There is more than one setting marked as Required_. Better: _More than one setting is specified as required._                                                                                                                                                                                                                                                                                                                                                                          |
+| you / your                                                             | TBD                                                                     | We strive to not use personal pronouns in error messaging. It is too easy to blame the user by using personal pronouns. In general, if the sentence can easily be changed to eliminate the use of these pronouns, do so.                                                                                                                                                                                                                                                                       |
+| as per the                                                             | per the                                                                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| hit / hitting                                                          | press / pressing                                                        | Users do not hit the keyboard. They press keys.                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| power down / turn off                                                  | power off                                                               | Also consider whether a shutdown is required.                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| ongoing                                                                | in progress                                                             | When referring to tasks, "ongoing" has the wrong connotation: long running perpetual tasks. This is OK: _ongoing server management_. Otherwise, use statements like: _the software upgrade is in progress_                                                                                                                                                                                                                                                                                     |
+| recreate                                                               | re-create                                                               | "Recreate" means to enjoy a leisurely activity. Re-create means to create again. Try to avoid using recreate/re-create, in general, and see if there is a way to rephrase the message without this term.                                                                                                                                                                                                                                                                                       |
+| getting                                                                | retrieving                                                              |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| updation                                                               | update                                                                  | "updation" is not a word.                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| is belonging                                                           | belongs                                                                 | Bad example: _Server profile assigned to the hypervisor profile is belonging to enclosure group…_                                                                                                                                                                                                                                                                                                                                                                                              |
+| is having                                                              | has                                                                     | Bad example: _Server profile assigned to the host is having a different server hardware type…_                                                                                                                                                                                                                                                                                                                                                                                                 |
+| is not having                                                          | does not have                                                           | Bad example: _Hypervisor host XYZ is not having a server profile attached to it and so it is unsupported._                                                                                                                                                                                                                                                                                                                                                                                     |
+| is matching                                                            | matches                                                                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| is not matching with                                                   | does not match                                                          |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| there are not enough                                                   | there are insufficient                                                  | In general, try to avoid this entirely. It is odd to start with "there are" only to end with the fact that this isn't true. For example, instead of telling the user that there are insufficient licenses to perform an action, you might tell them that all licenses are in use and the action cannot be performed.                                                                                                                                                                           |
+| simply                                                                 |                                                                         | Don't use this word. Never presume something is simple for the user.                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| drop down                                                              | menu / selection list                                                   | Refer to either a menu (e.g. action menu) or a selection list.                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| screen                                                                 | page / dialog                                                           | A page is commonly a linkable, top-level visualization page shown in a browser. A dialog is a pop-up (sidebar, central, full-page) that overlays a page and typically results from the user performing an action.                                                                                                                                                                                                                                                                              |
+| verify if / check if                                                   |                                                                         | Don't do it. Example: _Please verify if the input is bad_. Are we asking them to ensure it is bad or are we asking them to ensure it is good?                                                                                                                                                                                                                                                                                                                                                  |
+| invalid                                                                | not valid                                                               | Machine translation can incorrectly translate "invalid", so it is better to use "not valid". However, it is even better to use neither and instead be specific about what the problem is. For example, if an input is not valid because it is too long, then tell the user the input is too long instead of telling them it is not valid. See: https://docs.microsoft.com/en-us/style-guide/a-z-word-list-term-collections/i/invalid-not-valid                                                 |
+| and if                                                                 | Split into two sentences                                                | Bad example: _Retry the operation and if the problem persists, contact your authorized support representative and provide a support dump_. Good example: _Retry the operation. If the problem persists, contact your authorized support representative and provide a support dump_. In general, each separate option in an error resolution should be either, its own sentence, or in a comma separated list. The last-resort action of contacting support must always be in its own sentence. |
+
+## Conversational American English
+
+Variations of English are used throughout the world, however to maintain consistency
+in HPE's voice, the messaging standard is to use conversational American English.
+
+Below are common usage and spelling differences between American, Indian,
+and British English and suggested resolutions for where differences arise.
+
+### British English
+
+When there is a difference between American and British spelling, use the American spelling.
+
+Many British words are spelled ending in "our" such as "colour". Use the American "or" variant instead: color.
+
+Many British words are spelled ending in "yse" (analyse) or "ise" (realise). Use the American "yze"/"ize" variants instead: analyze/realize.
+
+Additional common differences:
+
+| British   | American  |
+| --------- | --------- |
+| Licence   | License   |
+| Cancelled | Canceled  |
+| Centre    | Center    |
+| Catalogue | Catalog   |
+| Behaviour | Behavior  |
+| Favourite | Favorite  |
+| Grey      | Gray      |
+| Chips     | Fries 😊  |
+| Biscuit   | Cookie 😊 |
+
+When using a spelling/grammar checker, set your locale to provide American English suggestions.
+
+### Indian English
+
+This is a collection of common words or phrases used in India, that are not used in American English:
+
+| If you find yourself using this… | Example                                                                                | Use this instead                                                                                                                                                      | Why?                                                           |
+| -------------------------------- | -------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------- |
+| Sorted                           | _The feature is not sorted._                                                           | Use either "elaborated", "thought through", "analyzed", "planned".                                                                                                    | Confusing. "Sorted" implies sorting in the computer sense.     |
+| Thus / Hence                     | _…, thus you must factory reset._                                                      | Use "therefore".                                                                                                                                                      | Uncommon or too formal.                                        |
+| Do the needful                   | _The server is down. Do the needful._                                                  | This is similar to "do what is necessary" or "do whatever it takes", but neither should be used in our messaging. Instead, be specific about what the user should do. | Never used. We should always be specific.                      |
+| We will revert back              | I send an email saying "do it like this" and you reply, _Thanks, we will revert back._ | _We will get back to you._                                                                                                                                            | "Revert back" implies going back to a previous revision.       |
+| Strong all the more              | _makes the case strong all the more._                                                  | _makes the case stronger._                                                                                                                                            | Never used.                                                    |
+| I have a doubt                   | _I have a doubt about that._                                                           | _I have a question_                                                                                                                                                   | "I have a doubt about that" implies you think it is incorrect. |
