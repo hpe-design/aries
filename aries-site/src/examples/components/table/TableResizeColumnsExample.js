@@ -1,5 +1,6 @@
 import React from 'react';
-import { Box, DataTable, Text, Heading } from 'grommet';
+import { Box, DataTable, Heading } from 'grommet';
+import { TruncatedText } from './TruncatedText';
 
 const data = [
   {
@@ -144,13 +145,13 @@ const columns = [
   {
     property: 'contact',
     header: 'Contact',
-    render: datum => <Text truncate>{datum.contact}</Text>,
+    render: datum => <TruncatedText value={datum.contact} />,
     size: 'xsmall',
   },
   {
     property: 'title',
     header: 'Title',
-    render: datum => <Text truncate>{datum.title}</Text>,
+    render: datum => <TruncatedText value={datum.title} />,
     size: 'xsmall',
   },
   {
@@ -164,7 +165,7 @@ const columns = [
   {
     property: 'deviceName',
     header: 'Device Name',
-    render: datum => <Text truncate>{datum.deviceName}</Text>,
+    render: datum => <TruncatedText value={datum.deviceName} />,
     size: 'xsmall',
   },
   {
@@ -174,28 +175,28 @@ const columns = [
 ];
 
 export const TableResizeColumnsExample = () => (
-         <>
-           <Heading
-             id="contact-info-heading"
-             level={3}
-             margin={{ bottom: 'medium', top: 'none' }}
-           >
-             Contact Information
-           </Heading>
-           <Box
-             align="start"
-             // restricting height to demonstrate pinned header behavior
-             height="medium"
-             overflow="auto"
-             fill="horizontal"
-           >
-             <DataTable
-               aria-describedby="contact-info-heading"
-               data={data}
-               columns={columns}
-               pin
-               resizeable
-             />
-           </Box>
-         </>
-       );
+  <>
+    <Heading
+      id="contact-info-heading"
+      level={3}
+      margin={{ bottom: 'medium', top: 'none' }}
+    >
+      Contact Information
+    </Heading>
+    <Box
+      align="start"
+      // restricting height to demonstrate pinned header behavior
+      height="medium"
+      overflow="auto"
+      fill="horizontal"
+    >
+      <DataTable
+        aria-describedby="contact-info-heading"
+        data={data}
+        columns={columns}
+        pin
+        resizeable
+      />
+    </Box>
+  </>
+);

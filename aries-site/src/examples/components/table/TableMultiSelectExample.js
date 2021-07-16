@@ -10,6 +10,7 @@ import {
   ResponsiveContext,
   Text,
 } from 'grommet';
+import { TruncatedText } from './TruncatedText';
 
 const data = [
   {
@@ -182,9 +183,7 @@ const columns = [
     render: datum => (
       <Button onClick={() => onClickHandler(datum)}>
         <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
-          <Text truncate weight="bold">
-            {datum.orderName}
-          </Text>
+          <TruncatedText value={datum.orderName} />
         </Box>
       </Button>
     ),
@@ -193,25 +192,25 @@ const columns = [
   {
     property: 'purchaseOrder',
     header: 'P.O. #',
-    render: datum => <Text truncate>{datum.purchaseOrder}</Text>,
+    render: datum => <TruncatedText value={datum.purchaseOrder} />,
     size: 'xsmall',
     align: 'end',
   },
   {
     property: 'state',
     header: 'State',
-    render: datum => <Text truncate>{datum.state}</Text>,
+    render: datum => <TruncatedText value={datum.state} />,
   },
   {
     property: 'service',
     header: 'Service',
-    render: datum => <Text truncate>{datum.service}</Text>,
+    render: datum => <TruncatedText value={datum.service} />,
     size: 'xsmall',
   },
   {
     property: 'tenant',
     header: 'Tenant',
-    render: datum => <Text truncate>{datum.tenant}</Text>,
+    render: datum => <TruncatedText value={datum.tenant} />,
   },
   {
     property: 'contact.email',

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box, DataTable, Text, Heading } from 'grommet';
+import { TruncatedText } from './TruncatedText';
 
 const data = [
   {
@@ -171,14 +172,14 @@ const columns = [
   {
     property: 'ipAddress',
     header: 'IP V4',
-    render: datum => <Text truncate>{datum.ipAddress}</Text>,
+    render: datum => <TruncatedText value={datum.ipAddress} />,
     size: 'xsmall',
     align: 'end',
   },
   {
     property: 'hostname',
     header: 'Hostname',
-    render: datum => <Text truncate>{datum.hostname}</Text>,
+    render: datum => <TruncatedText value={datum.hostname} />,
     size: 'xsmall',
   },
   {
@@ -192,7 +193,7 @@ const columns = [
   {
     property: 'deviceName',
     header: 'Device Name',
-    render: datum => <Text truncate>{datum.deviceName}</Text>,
+    render: datum => <TruncatedText value={datum.deviceName} />,
     size: 'xsmall',
   },
   {
@@ -244,12 +245,12 @@ export const TableFixedHeaderExample = () => (
       width={{ min: 'medium', max: 'large' }}
       overflow="auto"
     >
-    <DataTable
-      aria-describedby="connected-heading"
-      data={data}
-      columns={columns}
-      pin
-    />
+      <DataTable
+        aria-describedby="connected-heading"
+        data={data}
+        columns={columns}
+        pin
+      />
     </Box>
   </>
 );
